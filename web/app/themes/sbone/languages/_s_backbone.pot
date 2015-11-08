@@ -1,0 +1,192 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: sbone\n"
+"POT-Creation-Date: 2014-08-16 02:07-0500\n"
+"PO-Revision-Date: 2014-08-16 02:07-0500\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.6\n"
+"X-Poedit-Basepath: ../\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_e;esc_html__;esc_html_e\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:15
+msgid "Oops! That page can&rsquo;t be found."
+msgstr ""
+
+#: 404.php:19
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the links "
+"below or a search?"
+msgstr ""
+
+#: 404.php:27
+msgid "Most Used Categories"
+msgstr ""
+
+#: 404.php:44
+#, php-format
+msgid "Try looking in the monthly archives. %1$s"
+msgstr ""
+
+#: archive.php:29
+#, php-format
+msgid "Author: %s"
+msgstr ""
+
+#: archive.php:32
+#, php-format
+msgid "Day: %s"
+msgstr ""
+
+#: archive.php:35
+#, php-format
+msgid "Month: %s"
+msgstr ""
+
+#: archive.php:38
+#, php-format
+msgid "Year: %s"
+msgstr ""
+
+#: archive.php:41
+msgid "Archives"
+msgstr ""
+
+#: comments.php:35 comments.php:52
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:36 comments.php:53
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: comments.php:37 comments.php:54
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: comments.php:64
+msgid "Comments are closed."
+msgstr ""
+
+#: content-none.php:13
+msgid "Nothing Found"
+msgstr ""
+
+#: content-none.php:19
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: content-none.php:23
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: content-none.php:28
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: content-page.php:18 content-single.php:35
+msgid "Pages:"
+msgstr ""
+
+#: content-page.php:24 content-single.php:75
+msgid "Edit"
+msgstr ""
+
+#: content-single.php:13 content.php:14 underscore-templates.php:10
+msgid "Posted on"
+msgstr ""
+
+#: content-single.php:20 content.php:21 underscore-templates.php:17
+msgid "by"
+msgstr ""
+
+#: content-single.php:44 content-single.php:47 content.php:41 content.php:51
+msgid ", "
+msgstr ""
+
+#: content-single.php:52
+#, php-format
+msgid ""
+"This entry was tagged %2$s. Bookmark the <a href=\"%3$s\" rel=\"bookmark"
+"\">permalink</a>."
+msgstr ""
+
+#: content-single.php:54
+#, php-format
+msgid "Bookmark the <a href=\"%3$s\" rel=\"bookmark\">permalink</a>."
+msgstr ""
+
+#: content-single.php:60
+#, php-format
+msgid ""
+"This entry was posted in %1$s and tagged %2$s. Bookmark the <a href=\"%3$s\" "
+"rel=\"bookmark\">permalink</a>."
+msgstr ""
+
+#: content-single.php:62
+#, php-format
+msgid ""
+"This entry was posted in %1$s. Bookmark the <a href=\"%3$s\" rel=\"bookmark"
+"\">permalink</a>."
+msgstr ""
+
+#: content.php:45
+#, php-format
+msgid "Posted in %1$s"
+msgstr ""
+
+#: content.php:55
+#, php-format
+msgid "Tagged %1$s"
+msgstr ""
+
+#: footer.php:15
+#, php-format
+msgid "Proudly powered by %s"
+msgstr ""
+
+#: functions.php:50 header.php:32
+msgid "Primary Menu"
+msgstr ""
+
+#: functions.php:85
+msgid "Sidebar"
+msgstr ""
+
+#: header.php:23
+msgid "Skip to content"
+msgstr ""
+
+#: inc/extras.php:63
+#, php-format
+msgid "Page %s"
+msgstr ""
+
+#: inc/template-tags.php:24
+msgid "Post navigation"
+msgstr ""
+
+#: search.php:18
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#: underscore-templates.php:37
+msgid "Posted in"
+msgstr ""
+
+#: underscore-templates.php:59
+msgid "More"
+msgstr ""

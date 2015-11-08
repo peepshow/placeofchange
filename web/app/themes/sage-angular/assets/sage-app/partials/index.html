@@ -1,0 +1,25 @@
+{{hello}}
+
+<br>
+
+<a ui-sref="index.substate">Click here to load substate below:</a>
+
+<!-- Child UI Views will load here -->
+<!-- <div class="well" ui-view></div> -->
+
+<input type="text" ng-model="name">
+<p>Hello, {{name}}!</p>
+
+Here's a popover from <code>ui.bootstrap</code>:
+<button popover="I appeared on mouse enter!" popover-trigger="mouseenter" type="button" class="btn btn-default">Mouseenter</button>
+
+<a ui-sref="index.poststate">Click here to load substate below:</a>
+
+<ul>
+	<li class="postlist" ng-repeat="post in posts">
+		<a href="{{post.slug}}" ng-bind-html="post.title">{{post.title}}</a>
+		<div ng-bind-html="post.content"></div>
+	</li>
+</ul>
+<!-- Child UI Views will load here -->
+<div class="well" ui-view></div>

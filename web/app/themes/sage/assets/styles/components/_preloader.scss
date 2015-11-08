@@ -1,0 +1,149 @@
+.is-loading,
+.is-loading a {
+  cursor: progress;
+}
+
+/*
+ * CSS Animations
+ * Don't forget to add vendor prefixes!
+ * From: http://smoothstate.com/typical-implementation.html
+ */
+
+ #dust {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  z-index: 2;
+}
+
+.loading-overlay {
+  position: absolute;
+  z-index: -1;
+  background: rgba(32,35,47,0.5);
+  height: 100vh;
+  width: 100vw;
+  opacity: 0;
+  overflow: hidden;
+  animation-duration: 0.50s;
+  transition-timing-function: ease-in;
+  animation-fill-mode: both;
+  animation-name: scaleDownIn;
+
+  &.loading-fool {
+    z-index: 999;
+    animation-name: scaleDownIn;
+  }
+
+  .preloader {
+    width: 100vw;
+    height: auto;
+    margin: auto;
+    text-align: center;
+    $textcolor: #eee;
+    $blur: 0.12em;
+
+    .text {
+      width: 100vw;
+      height: 100vh;
+      z-index: 3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transform-style: preserve-3d;
+      perspective: 500px;
+      color: $textcolor;
+      position: absolute;
+    }
+
+    h1 {
+      animation: wobble 5s ease-in-out infinite;
+      padding: 0;
+      margin: 0;
+    }
+
+    @keyframes wobble {
+      from,
+      to {
+        transform: rotateY(-33deg);
+      }
+      50% {
+        transform: rotateY(33deg);
+      }
+    }
+
+    span {
+      font: italic 3vw Playfair Display;
+      animation: 5s ease-in-out infinite;
+      color: transparent;
+      text-shadow: 0 0 1px $textcolor;
+
+      &:nth-child(-n+3) {
+        animation-delay: -2.5s;
+      }
+    }
+
+    @for $i from 1 through 3 {
+      span:nth-child(#{$i}),
+      span:nth-last-child(#{$i}) {
+        animation-name: blur-#{$i};
+      }
+      @keyframes blur-#{$i} {
+        50% {
+          text-shadow: 0 0 $blur/$i $textcolor;
+        }
+      }
+    }
+
+  }
+}
+
+@-webkit-keyframes scaleDownIn {
+	from { opacity: 0; -webkit-transform: scale(1.3); }
+	to { opacity: 1; -webkit-transform: scale(1); }
+}
+@keyframes scaleDownIn {
+  from { opacity: 0; -webkit-transform: scale(1.3); }
+	to { opacity: 1; -webkit-transform: scale(1); }
+}
+
+/*
+ * CSS Page Transitions
+ * Don't forget to add vendor prefixes!
+ */
+.m-scene {
+  .scene_element {
+    animation-duration: 0.50s;
+    transition-timing-function: ease-in;
+    animation-fill-mode: both;
+  }
+
+  .scene_element--scaleUp {
+    animation-name: scaleUp;
+  }
+  .scene_element--fadeIn {
+    animation-name: fadeIn;
+  }
+  .loader--scaleDownIn {
+    animation-duration: 0.50s;
+    transition-timing-function: ease-in;
+    animation-fill-mode: both;
+    animation-name: scaleDownIn;
+    animation-direction: alternate-reverse;
+  }
+  /** Reverse "exit" animations */
+  &.is-exiting {
+    .scene_element {
+      animation-direction: alternate-reverse;
+    }
+    .scene_element--delayed {
+      animation-delay: 0s;
+    }
+    .loader--scaleDownIn {
+      animation-delay: 0.3s;
+    }
+  }
+  .scene_element--delayed {
+    animation-delay: 0.75s;
+  }
+}

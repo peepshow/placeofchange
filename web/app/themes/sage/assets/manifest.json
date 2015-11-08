@@ -1,0 +1,28 @@
+{
+  "dependencies": {
+    "main.js": {
+      "files": [
+        "scripts/main.js"
+      ],
+      "main": true
+    },
+    "main.css": {
+      "files": [
+        "styles/main.scss"
+      ],
+      "main": true
+    },
+    "jquery.js": {
+      "bower": ["jquery"]
+    },
+    "modernizr.js": {
+      "files": [
+        "scripts/modernizr.min.js"
+      ],
+      "main": false
+    }
+  },
+  "config": {
+    "devUrl": "http://placeofchange.dev"
+  }
+}

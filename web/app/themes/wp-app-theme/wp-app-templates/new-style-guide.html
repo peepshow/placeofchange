@@ -1,0 +1,23 @@
+<div class="col-md-6">
+	<h2>New Style Guide</h2>
+	<p>Making a new color style guide is easy, just name your guide, and choose the colors you want!</p>
+</div>
+<div class="col-md-6">
+	<form ng-submit="newStyleGuide()">
+		<div class="form-group">
+			<label for="newSG_title">
+				Style Guide Title<br/>
+				<input type="text" placeholder="Title" ng-model="newSG.title" name="newSG_title" />
+			</label>
+		</div>
+		<div class="form-group">
+			<label for="newSG_content">
+				Style Guide Description<br/>
+				<textarea placeholder="Description" ng-model="newSG.content" name="newSG_content"></textarea>
+			</label>
+		</div>
+		<div class="form-group">
+			<input type="submit" value="Save Style Guide" class="btn btn-primary" />
+		</div>
+	</form>
+</div>

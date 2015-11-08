@@ -1,0 +1,6 @@
+<ul>
+	<li ng-repeat="post in posts">
+		<a href="{{post.slug}}" ng-bind-html="post.title"></a>
+		<div ng-bind-html="post.content"></div>
+	</li>
+</ul>
