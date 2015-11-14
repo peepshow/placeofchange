@@ -12,6 +12,7 @@
 $sage_includes = [
   'lib/assets.php',  // Scripts and stylesheets
   'lib/extras.php',  // Custom functions
+  'lib/rere-extras.php',  // Custom functions
   'lib/setup.php',   // Theme setup
   'lib/titles.php',  // Page titles
   'lib/wrapper.php',  // Theme wrapper class
@@ -25,3 +26,6 @@ foreach ($sage_includes as $file) {
   require_once $filepath;
 }
 unset($file, $filepath);
+
+// Register Custom Navigation Walker
+require_once('wp_bootstrap_navwalker.php');

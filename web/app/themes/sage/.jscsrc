@@ -72,19 +72,9 @@
     "!=",
     "!=="
   ],
-  "requireSpaceAfterBinaryOperators": true,
-  "requireSpacesInConditionalExpression": true,
-  "requireSpaceBeforeBlockStatements": true,
-  "requireSpacesInForStatement": true,
-  "requireLineFeedAtFileEnd": true,
-  "requireSpacesInFunctionExpression": {
-    "beforeOpeningCurlyBrace": true
-  },
   "disallowSpacesInAnonymousFunctionExpression": {
     "beforeOpeningRoundBrace": true
   },
-  "disallowSpacesInsideObjectBrackets": "all",
-  "disallowSpacesInsideArrayBrackets": "all",
   "disallowSpacesInsideParentheses": false,
   "jsDoc": {
     "checkParamNames": true,

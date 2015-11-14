@@ -10,7 +10,7 @@ use Roots\Sage\Wrapper;
 <?php get_template_part('templates/head'); ?>
 <body <?php body_class(); ?>>
   <div class="page-wrap">
-    <div id="preloader" class="loading-overlay">
+    <!-- <div id="preloader" class="loading-overlay">
       <div id="dust">
       </div>
         <div class="preloader">
@@ -18,7 +18,7 @@ use Roots\Sage\Wrapper;
             <h1><span>L</span><span>o</span><span>a</span><span>d</span><span>i</span><span>n</span><span>g</span></h1>
           </div>
       </div>
-    </div>
+    </div> -->
     <!--[if lt IE 9]>
       <div class="alert alert-warning">
         <?php _e('You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.', 'sage'); ?>
@@ -40,8 +40,8 @@ use Roots\Sage\Wrapper;
 
                 <?php include Wrapper\template_path(); ?>
 
-              </div>
-              </div>
+                  </div>
+                </div>
               </div><!-- .m-scene -->
 
 

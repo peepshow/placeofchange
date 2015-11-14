@@ -1,19 +1,20 @@
 @import "common/variables";
-@import "vendor/keyframes";
-@import "vendor/animations";
+@import "custom/custom-variables";
+@import "plugins/keyframes";
+@import "plugins/animations";
+@import "plugins/video-js";
 
 // Automatically injected Bower dependencies via wiredep (never manually edit this block)
 // bower:scss
-@import "../../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+@import "../../bower_components/bootstrap/scss/bootstrap.scss";
 // endbower
 
 @import "common/global";
-
 @import "components/preloader";
 
 @import "components/buttons";
 @import "components/comments";
-@import "components/forms";
+//@import "components/forms";
 @import "components/grid";
 @import "components/wp-classes";
 
@@ -22,4 +23,70 @@
 @import "layouts/footer";
 @import "layouts/pages";
 @import "layouts/posts";
-@import "layouts/tinymce";
+
+
+
+
+// @import "custom/landio";
+
+
+@import "custom/icomoon";
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,600,500,300,700|Lato:400,700");
+
+// Core variables and mixins
+// @import "../../bower_components/bootstrap/scss/variables";
+
+@import "../../bower_components/bootstrap/scss/mixins";
+
+// Reset and dependencies
+@import "../../bower_components/bootstrap/scss/normalize";
+@import "../../bower_components/bootstrap/scss/print";
+
+// Core CSS
+@import "../../bower_components/bootstrap/scss/reboot";
+@import "../../bower_components/bootstrap/scss/type";
+@import "../../bower_components/bootstrap/scss/images";
+// @import "../../bower_components/bootstrap/scss/code";
+@import "../../bower_components/bootstrap/scss/grid";
+// @import "../../bower_components/bootstrap/scss/tables";
+@import "../../bower_components/bootstrap/scss/forms";
+@import "../../bower_components/bootstrap/scss/buttons";
+
+// Components
+@import "../../bower_components/bootstrap/scss/animation";
+@import "../../bower_components/bootstrap/scss/dropdown";
+// @import "../../bower_components/bootstrap/scss/button-group";
+// @import "../../bower_components/bootstrap/scss/input-group";
+@import "../../bower_components/bootstrap/scss/custom-forms";
+@import "../../bower_components/bootstrap/scss/nav";
+@import "../../bower_components/bootstrap/scss/navbar";
+@import "../../bower_components/bootstrap/scss/card";
+// @import "../../bower_components/bootstrap/scss/breadcrumb";
+// @import "../../bower_components/bootstrap/scss/pagination";
+// @import "../../bower_components/bootstrap/scss/pager";
+@import "../../bower_components/bootstrap/scss/labels";
+@import "../../bower_components/bootstrap/scss/jumbotron";
+// @import "../../bower_components/bootstrap/scss/alert";
+// @import "../../bower_components/bootstrap/scss/progress";
+@import "../../bower_components/bootstrap/scss/media";
+@import "../../bower_components/bootstrap/scss/list-group";
+@import "../../bower_components/bootstrap/scss/responsive-embed";
+// @import "../../bower_components/bootstrap/scss/close";
+
+// Components w/ JavaScript
+@import "../../bower_components/bootstrap/scss/modal";
+// @import "../../bower_components/bootstrap/scss/tooltip";
+// @import "../../bower_components/bootstrap/scss/popover";
+@import "../../bower_components/bootstrap/scss/carousel";
+
+// Utility classes
+@import "../../bower_components/bootstrap/scss/utilities";
+@import "../../bower_components/bootstrap/scss/utilities-spacing";
+@import "../../bower_components/bootstrap/scss/utilities-responsive";
+
+
+@import "common/global";
+// Video JS
+// @import "plugins/videojs-landio-skin";
+
+@import "custom/landio-custom";
