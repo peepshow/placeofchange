@@ -1,6 +1,7 @@
 // ## Globals
 var argv         = require('minimist')(process.argv.slice(2));
-var autoprefixer = require('gulp-autoprefixer');
+// var autoprefixer = require('gulp-autoprefixer');
+var autoprefixer = require('autoprefixer');
 var browserSync  = require('browser-sync').create();
 var changed      = require('gulp-changed');
 var concat       = require('gulp-concat');
@@ -19,6 +20,25 @@ var runSequence  = require('run-sequence');
 var sass         = require('gulp-sass');
 var sourcemaps   = require('gulp-sourcemaps');
 var uglify       = require('gulp-uglify');
+
+var postcss = require('gulp-postcss');
+var lost    = require('lost');
+var mdcss   = require('mdcss');
+var cssnano = require('cssnano');
+// var fs = require('fs');
+// var postcssstyleguide = require('postcss-style-guide');
+// var sassline = require('psg-theme-sassline');
+// gulp.task('css', function () {
+//     var processors = [
+//         autoprefixer,
+//         cssnano
+//     ];
+//     return gulp.src('./src/*.scss')
+//         .pipe(sass().on('error', sass.logError))
+//         .pipe(postcss(processors))
+//         .pipe(gulp.dest('./dest'));
+// });
+
 
 // See https://github.com/austinpray/asset-builder
 var manifest = require('asset-builder')('./assets/manifest.json');
@@ -70,6 +90,7 @@ var revManifest = path.dist + 'assets.json';
 // ## Reusable Pipelines
 // See https://github.com/OverZealous/lazypipe
 
+
 // ### CSS processing pipeline
 // Example
 // ```
@@ -78,6 +99,10 @@ var revManifest = path.dist + 'assets.json';
 //   .pipe(gulp.dest(path.dist + 'styles'))
 // ```
 var cssTasks = function(filename) {
+  var processors = [
+      lost,
+      autoprefixer
+  ];
   return lazypipe()
     .pipe(function() {
       return gulpif(!enabled.failStyleTask, plumber());
@@ -90,27 +115,28 @@ var cssTasks = function(filename) {
     })
     .pipe(function() {
       return gulpif('*.scss', sass({
-        outputStyle: 'nested', // libsass doesn't support expanded yet
+        outputStyle: 'compact', // libsass doesn't support expanded yet
         precision: 10,
         includePaths: ['.'],
         errLogToConsole: !enabled.failStyleTask
       }));
     })
     .pipe(concat, filename)
-    .pipe(autoprefixer, {
-      browsers: [
-        'last 2 versions',
-        'ie 8',
-        'ie 9',
-        'android 2.3',
-        'android 4',
-        'opera 12'
-      ]
-    })
-    .pipe(minifyCss, {
-      advanced: false,
-      rebase: false
-    })
+    // .pipe(autoprefixer, {
+    //   browsers: [
+    //     'last 2 versions',
+    //     'ie 8',
+    //     'ie 9',
+    //     'android 2.3',
+    //     'android 4',
+    //     'opera 12'
+    //   ]
+    // })
+    // .pipe(minifyCss, {
+    //   advanced: false,
+    //   rebase: false
+    // })
+    .pipe(postcss, processors)
     .pipe(function() {
       return gulpif(enabled.rev, rev());
     })
@@ -134,11 +160,11 @@ var jsTasks = function(filename) {
       return gulpif(enabled.maps, sourcemaps.init());
     })
     .pipe(concat, filename)
-    .pipe(uglify, {
-      compress: {
-        'drop_debugger': enabled.stripJSDebug
-      }
-    })
+    // .pipe(uglify, {
+    //   compress: {
+    //     'drop_debugger': enabled.stripJSDebug
+    //   }
+    // })
     .pipe(function() {
       return gulpif(enabled.rev, rev());
     })
@@ -289,4 +315,31 @@ gulp.task('wiredep', function() {
 // `gulp` - Run a complete build. To compile for production run `gulp --production`.
 gulp.task('default', ['clean'], function() {
   gulp.start('build');
+});
+
+//
+// gulp.task('rereguide', function() {
+//   var processedCSS = fs.readFileSync('rereguide/output.css', 'utf-8');
+//   return gulp.src('rereguide/input.css')
+//     .pipe(postcss([
+//       postcssstyleguide({
+//         name: 'Rere Guide',
+//         processedCSS: processedCSS,
+//         theme: sassline
+//       })
+//     ]))
+//     .pipe(gulp.dest('rereguide/'));
+// });
+
+
+gulp.task('rereguide', function() {
+  return gulp.src(path.dist + '/styles/main.css').pipe(
+    postcss([
+      require('mdcss')({
+        index: 'boom.html'
+      })
+    ])
+  ).pipe(
+    gulp.dest('styleguide/')
+  );
 });

@@ -13,7 +13,7 @@ function setup() {
   add_theme_support('soil-clean-up');
   add_theme_support('soil-nav-walker');
   add_theme_support('soil-nice-search');
-  //add_theme_support('soil-jquery-cdn');
+  add_theme_support('soil-jquery-cdn');
   add_theme_support('soil-relative-urls');
 
   // Make theme available for translation
@@ -89,7 +89,7 @@ function display_sidebar() {
     is_page_template('template-custom.php'),
   ]);
 
-  //return apply_filters('sage/display_sidebar', $display);
+  return apply_filters('sage/display_sidebar', $display);
 }
 
 /**
@@ -101,8 +101,7 @@ function assets() {
   if (is_single() && comments_open() && get_option('thread_comments')) {
     wp_enqueue_script('comment-reply');
   }
-  wp_enqueue_script('sage/modernizr', Assets\asset_path('scripts/modernizr.js'), [], false, false);
-  wp_enqueue_script('sage/jquery', Assets\asset_path('scripts/jquery.js'), [], false, false);
-  wp_enqueue_script('sage/js', Assets\asset_path('scripts/main.js'), [], null, true);
+  wp_enqueue_script('modernizr', Assets\asset_path('scripts/modernizr.js'), ['jquery'], false, false);
+  wp_enqueue_script('sage/js', Assets\asset_path('scripts/main.js'), ['jquery'], null, true);
 }
 add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\assets', 100);

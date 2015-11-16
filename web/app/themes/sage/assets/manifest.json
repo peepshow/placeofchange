@@ -2,7 +2,7 @@
   "dependencies": {
     "main.js": {
       "files": [
-        "scripts/**/*",
+        "scripts/landio/*.js",
         "scripts/main.js"
       ],
       "main": true
@@ -17,10 +17,7 @@
       "bower": ["jquery"]
     },
     "modernizr.js": {
-      "files": [
-        "scripts/modernizr.min.js"
-      ],
-      "main": false
+      "files": ["scripts/vendor/modernizr.min.js"]
     }
   },
   "config": {

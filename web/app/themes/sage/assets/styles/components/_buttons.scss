@@ -1,0 +1,84 @@
+//
+// =Social buttons
+// --------------------------------------------------
+
+$facebook: #3b5998;
+$twitter: #55acee;
+$google: #dc4e41;
+$linkedin: #0077b5;
+
+.bg-facebook {
+  background-color: #3b5998;
+}
+.bg-twitter {
+  background-color: #55acee;
+}
+.bg-google {
+  background-color: #dc4e41;
+}
+.bg-linkedin {
+  background-color: #0077b5;
+}
+
+.btn-social {
+  color: #fff;
+  border-radius: .25rem;
+  &:focus,
+  &:hover {
+    color: #fff;
+    background-color: $gray;
+  }
+  span:before {
+    color: rgba(255,255,255,.5);
+  }
+  > .icon-linkedin {
+    position: relative;
+    top: -.2rem;
+    font-size: 1.1rem;
+  }
+}
+
+.btn-social-icon {
+  padding: 1.4rem;
+  background-color: #fff;
+  > span {
+    margin: 0;
+    &:before {
+      color: rgba(66,78,83,.5);
+    }
+  }
+  &:hover,
+  &:focus {
+    > span:before {
+      color: #fff;
+    }
+  }
+}
+
+.btn-social-facebook {
+  &:hover,
+  &:focus {
+    background-color: $facebook;
+  }
+}
+
+.btn-social-twitter {
+  &:hover,
+  &:focus {
+    background-color: $twitter;
+  }
+}
+
+.btn-social-google {
+  &:hover,
+  &:focus {
+    background-color: $google;
+  }
+}
+
+.btn-social-linkedin {
+  &:hover,
+  &:focus {
+    background-color: $linkedin;
+  }
+}

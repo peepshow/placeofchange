@@ -3,14 +3,14 @@
     <a class="brand" href="<?= esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a>
     <nav class="nav-primary">
       <?php
-      // wp_nav_menu( array(
-      //   'menu'              => 'primary_navigation',
-      //   'theme_location'    => 'primary_navigation',
-      //   'depth'             => 2,
-      //   'menu_class'        => 'nav navbar-nav',
-      //   'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
-      //   'walker'            => new wp_bootstrap_navwalker())
-      // );
+      wp_nav_menu( array(
+        'menu'              => 'primary_navigation',
+        'theme_location'    => 'primary_navigation',
+        'depth'             => 2,
+        'menu_class'        => 'nav navbar-nav',
+        'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
+        'walker'            => new wp_bootstrap_navwalker())
+      );
       ?>
       <?php
       // if (has_nav_menu('primary_navigation')) :
@@ -37,38 +37,38 @@
     <nav id="collapsingNavbarInverse" class="collapse navbar-toggleable-custom" role="tabpanel" aria-labelledby="collapsingNavbarInverse">
 
       <?php
-      wp_nav_menu( array(
-        'menu'              => 'primary_navigation',
-        'theme_location'    => 'primary_navigation',
-        'depth'             => 2,
-        'menu_class'        => 'nav navbar-nav',
-        'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
-        'walker'            => new wp_bootstrap_navwalker())
-      );
+      // wp_nav_menu( array(
+      //   'menu'              => 'primary_navigation',
+      //   'theme_location'    => 'primary_navigation',
+      //   'depth'             => 2,
+      //   'menu_class'        => 'nav navbar-nav',
+      //   'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
+      //   'walker'            => new wp_bootstrap_navwalker())
+      // );
       ?>
       <?php
-      // if (has_nav_menu('primary_navigation')) :
-      //   wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav navbar-nav pull-right', nav_item]);
-      // endif;
+      if (has_nav_menu('primary_navigation')) :
+        wp_nav_menu(['theme_location' => 'primary_navigation', 'walker' => new wp_bootstrap_navwalker(), 'menu_class' => 'nav navbar-nav']);
+      endif;
       ?>
 
       <ul class="nav navbar-nav pull-right">
-        <!-- <li class="nav-item nav-item-toggable">
-          <a class="nav-link no-smoothState" href="http://tympanus.net/codrops/?p=25217">About Land.io</a>
+        <li class="nav-item nav-item-toggable">
+          <a class="nav-link" href="http://tympanus.net/codrops/?p=25217">About Land.io</a>
         </li>
         <li class="nav-item nav-item-toggable active">
-          <a class="nav-link no-smoothState" href="ui-elements.html">UI Kit <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="ui-elements.html">UI Kit <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item nav-item-toggable">
-          <a class="nav-link no-smoothState" href="https://github.com/tatygrassini/landio-html" target="_blank">GitHub</a>
-        </li> -->
-        <li class="nav-item nav-item-toggable hidden-sm-up no-smoothState">
+          <a class="nav-link" href="https://github.com/tatygrassini/landio-html" target="_blank">GitHub</a>
+        </li>
+        <li class="nav-item nav-item-toggable hidden-sm-up">
           <form class="navbar-form">
-            <input class="form-control navbar-search-input no-smoothState" type="text" placeholder="Type your search &amp; hit Enter&hellip;">
+            <input class="form-control navbar-search-input" type="text" placeholder="Type your search &amp; hit Enter&hellip;">
           </form>
         </li>
-        <li class="navbar-divider hidden-sm-down no-smoothState"></li>
-        <li class="nav-item dropdown nav-dropdown-search hidden-sm-down no-smoothState">
+        <li class="navbar-divider hidden-sm-down"></li>
+        <li class="nav-item dropdown nav-dropdown-search hidden-sm-down">
           <a class="nav-link dropdown-toggle" id="dropdownMenuInverse1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <span class="icon-search"></span>
           </a>
@@ -125,3 +125,9 @@
     </nav>
   </div>
 </header>
+
+<section class="lostrow">
+  <div class="lostquarter">1</div>
+  <div class="losthalf">2</div>
+  <div class="lostquarter">3</div>
+</section>

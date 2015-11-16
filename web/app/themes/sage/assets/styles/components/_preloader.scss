@@ -82,7 +82,7 @@
       }
     }
 
-    $blur: 0.2em; 
+    $blur: 0.2em;
     @for $i from 1 through 3 {
       span:nth-child(#{$i}),
       span:nth-last-child(#{$i}) {
@@ -118,7 +118,7 @@
   }
 
   .scene_element--scaleUp {
-    animation-name: scaleUp;
+  //  animation-name: scaleUp;
   }
   .scene_element--fadeIn {
     animation-name: fadeIn;
