@@ -21,13 +21,24 @@
   </div>
 </header> -->
 
+<nav class="cd-stretchy-nav">
+  <a class="cd-nav-trigger" href="#0">
+    Menu
+    <span aria-hidden="true"></span>
+  </a>
+  <?php
+  if (has_nav_menu('primary_navigation')) :
+    wp_nav_menu(['theme_location' => 'primary_navigation', 'walker' => new wp_bootstrap_navwalker()]);
+  endif;
+  ?>
+  <span aria-hidden="true" class="stretchy-nav-bg"></span>
+</nav>
 
-
-<header class="navbar navbar-dark bg-inverse navbar-static-top">
+<!-- <header class="navbar navbar-dark bg-inverse navbar-static-top">
   <div class="container">
     <a class="navbar-brand" href="index.html">
-      <!-- <span class="icon-logo"></span>
-      <span class="sr-only">Land.io</span> -->
+      <span class="icon-logo"></span>
+      <span class="sr-only">Land.io</span>
     </a>
     <a class="navbar-toggler hidden-md-up pull-right" data-toggle="collapse" href="#collapsingNavbarInverse" aria-expanded="false" aria-controls="collapsingNavbarInverse">
     &#9776;</a>
@@ -124,10 +135,10 @@
       </a>
     </nav>
   </div>
-</header>
+</header> -->
 
-<section class="lostrow">
+<!-- <section class="lostrow">
   <div class="lostquarter">1</div>
   <div class="losthalf">2</div>
   <div class="lostquarter">3</div>
-</section>
+</section> -->

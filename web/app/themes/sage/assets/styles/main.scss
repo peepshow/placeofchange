@@ -6,44 +6,7 @@
 
 // Automatically injected Bower dependencies via wiredep (never manually edit this block)
 // bower:scss
-@import "../../bower_components/bootstrap/scss/_variables.scss";
-@import "../../bower_components/bootstrap/scss/_mixins.scss";
-@import "../../bower_components/bootstrap/scss/_normalize.scss";
-@import "../../bower_components/bootstrap/scss/_print.scss";
-@import "../../bower_components/bootstrap/scss/_reboot.scss";
-@import "../../bower_components/bootstrap/scss/_type.scss";
-@import "../../bower_components/bootstrap/scss/_images.scss";
-@import "../../bower_components/bootstrap/scss/_code.scss";
-@import "../../bower_components/bootstrap/scss/_grid.scss";
-@import "../../bower_components/bootstrap/scss/_tables.scss";
-@import "../../bower_components/bootstrap/scss/_forms.scss";
-@import "../../bower_components/bootstrap/scss/_buttons.scss";
-@import "../../bower_components/bootstrap/scss/_animation.scss";
-@import "../../bower_components/bootstrap/scss/_dropdown.scss";
-@import "../../bower_components/bootstrap/scss/_button-group.scss";
-@import "../../bower_components/bootstrap/scss/_input-group.scss";
-@import "../../bower_components/bootstrap/scss/_custom-forms.scss";
-@import "../../bower_components/bootstrap/scss/_nav.scss";
-@import "../../bower_components/bootstrap/scss/_navbar.scss";
-@import "../../bower_components/bootstrap/scss/_card.scss";
-@import "../../bower_components/bootstrap/scss/_breadcrumb.scss";
-@import "../../bower_components/bootstrap/scss/_pagination.scss";
-@import "../../bower_components/bootstrap/scss/_pager.scss";
-@import "../../bower_components/bootstrap/scss/_labels.scss";
-@import "../../bower_components/bootstrap/scss/_jumbotron.scss";
-@import "../../bower_components/bootstrap/scss/_alert.scss";
-@import "../../bower_components/bootstrap/scss/_progress.scss";
-@import "../../bower_components/bootstrap/scss/_media.scss";
-@import "../../bower_components/bootstrap/scss/_list-group.scss";
-@import "../../bower_components/bootstrap/scss/_responsive-embed.scss";
-@import "../../bower_components/bootstrap/scss/_close.scss";
-@import "../../bower_components/bootstrap/scss/_modal.scss";
-@import "../../bower_components/bootstrap/scss/_tooltip.scss";
-@import "../../bower_components/bootstrap/scss/_popover.scss";
-@import "../../bower_components/bootstrap/scss/_carousel.scss";
-@import "../../bower_components/bootstrap/scss/_utilities.scss";
-@import "../../bower_components/bootstrap/scss/_utilities-background.scss";
-@import "../../bower_components/bootstrap/scss/_utilities-spacing.scss";
+@import "../../bower_components/bourbon/app/assets/stylesheets/_bourbon.scss";
 // endbower
 @import "custom/custom-variables";
 @import "common/variables";
@@ -69,11 +32,13 @@
 @import "layouts/pages";
 @import "layouts/posts";
 
-@import "components/buttons";
+//@import "components/buttons";
 //@import "custom/custom-forms";
-@import "custom/landio-misc";
+//@import "custom/landio-misc";
 
 // @import "custom/landio-custom";
 // Video JS
+// @import "../../bower_components/video.js/src/css/video-js.scss";
+
 //@import "plugins/video-js";
-@import "plugins/videojs-landio-skin";
+@import "plugins/video-js-sublime";

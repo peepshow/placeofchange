@@ -1,40 +1,21 @@
 // Grid system
 .main {
-  @include make-col();
-
-  @include media-breakpoint-up(sm) {
-    @include make-col-span($main-sm-columns);
-    .sidebar-primary & {
-      @include make-col-span($main-sm-columns - $sidebar-sm-columns);
-    }
-  }
+  // @include make-col();
+  //
+  // @include media-breakpoint-up(sm) {
+  //   @include make-col-span($main-sm-columns);
+  //   .sidebar-primary & {
+  //     @include make-col-span($main-sm-columns - $sidebar-sm-columns);
+  //   }
+  // }
 }
 .sidebar {
-  @include make-col();
-
-  @include media-breakpoint-up(sm) {
-    @include make-col-span($sidebar-sm-columns);
-  }
+  // @include make-col();
+  //
+  // @include media-breakpoint-up(sm) {
+  //   @include make-col-span($sidebar-sm-columns);
+  // }
 }
-
-
-
-/*---
-title:   Lost Grids
-section: Main CSS
----
-
-Button styles can be applied to any element. Typically you'll want to use
-either a `<button>` or an `<a>` element:
-
-​```html_example
-<section class="lostrow">
-  <div class="lostquarter">1</div>
-  <div class="losthalf">2</div>
-  <div class="lostquarter">3</div>
-</section>
-​```
-*/
 
 section.lostrow {
   lost-center: 980px;
@@ -48,22 +29,4 @@ section.lostrow {
 .losthalf {
   lost-column: 1/2 0;
   background: #eee333;
-}
-
-/*---
-title:   LOST?
-section: Base CSS
----
-
-Button styles can be applied to any element. Typically you'll want to use
-either a `<button>` or an `<a>` element:
-
-​```html_example
-<button class="btn">Click</button>
-<a class="btn" href="/some-page">Some Page</a>
-​```
-*/
-.btn {
-    background-color: black;
-    color: white;
 }

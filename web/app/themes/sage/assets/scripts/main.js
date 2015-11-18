@@ -20,16 +20,18 @@
       init: function() {
         // JavaScript to be fired on all pages
         // dustyDust();
+        stretchyNav();
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired
-        smoothStateInit();
+
       }
     },
     // Home page
     'home': {
       init: function() {
         // JavaScript to be fired on the home page
+        smoothStateInit();
       },
       finalize: function() {
         // JavaScript to be fired on the home page, after the init JS
@@ -73,6 +75,25 @@
     }
   };
 
+  function stretchyNav() {
+   if( $('.cd-stretchy-nav').length > 0 ) {
+     var stretchyNavs = $('.cd-stretchy-nav');
+
+     stretchyNavs.each(function(){
+       var stretchyNav = $(this),
+         stretchyNavTrigger = stretchyNav.find('.cd-nav-trigger');
+
+       stretchyNavTrigger.on('click', function(event){
+         event.preventDefault();
+         stretchyNav.toggleClass('nav-is-visible');
+       });
+     });
+
+     $(document).on('click', function(event){
+       ( !$(event.target).is('.cd-nav-trigger') && !$(event.target).is('.cd-nav-trigger span') ) && stretchyNavs.removeClass('nav-is-visible');
+     });
+   }
+ };
 
   function smoothStateInit() {
     console.log('fucking init');

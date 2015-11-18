@@ -211,54 +211,54 @@ a:hover {
 
 $font-family-sans-serif-custom: "Lato", sans-serif !default;
 
-.bg-inverse {
-  a,
-  a:focus,
-  a:hover {
-    color: #fff;
-  }
-}
-
-.bg-inverse-custom {
-  margin-top: 1.1875rem;
-  background-color: transparent;
-}
-
-.bg-white {
-  background-color: #fff;
-}
-
-.section-intro,
-.section-features,
-.section-pricing,
-.section-testimonials,
-.section-text,
-.section-signup {
-  padding-top: 2.8125rem;
-
-  @include media-breakpoint-up(md) {
-    padding-top: 5.625rem;
-  }
-}
-
-.section-features,
-.section-pricing,
-.section-text,
-.section-news,
-.section-signup {
-  padding-bottom: 2.8125rem;
-
-  @include media-breakpoint-up(md) {
-    padding-bottom: 5.625rem;
-  }
-}
-
-@include media-breakpoint-down(sm) {
-  .p-y-lg {
-    padding-top: ($spacer-y * .5) !important;
-    padding-bottom: ($spacer-y * .5) !important;
-  }
-}
+// .bg-inverse {
+//   a,
+//   a:focus,
+//   a:hover {
+//     color: #fff;
+//   }
+// }
+//
+// .bg-inverse-custom {
+//   margin-top: 1.1875rem;
+//   background-color: transparent;
+// }
+//
+// .bg-white {
+//   background-color: #fff;
+// }
+//
+// .section-intro,
+// .section-features,
+// .section-pricing,
+// .section-testimonials,
+// .section-text,
+// .section-signup {
+//   padding-top: 2.8125rem;
+//
+//   @include media-breakpoint-up(md) {
+//     padding-top: 5.625rem;
+//   }
+// }
+//
+// .section-features,
+// .section-pricing,
+// .section-text,
+// .section-news,
+// .section-signup {
+//   padding-bottom: 2.8125rem;
+//
+//   @include media-breakpoint-up(md) {
+//     padding-bottom: 5.625rem;
+//   }
+// }
+//
+// @include media-breakpoint-down(sm) {
+//   .p-y-lg {
+//     padding-top: ($spacer-y * .5) !important;
+//     padding-bottom: ($spacer-y * .5) !important;
+//   }
+// }
 
 
 //

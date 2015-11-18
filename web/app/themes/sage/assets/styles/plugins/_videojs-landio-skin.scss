@@ -135,9 +135,9 @@
   font-size: 20px;
   cursor: pointer;
   transform: translateX(-154px);
-  @include media-breakpoint-down(sm) {
-    bottom: 3px;
-  }
+  // @include media-breakpoint-down(sm) {
+  //   bottom: 3px;
+  // }
 }
 
 .vjs-default-skin .vjs-mute-control:before { content: "\e617"; }
@@ -151,9 +151,9 @@
   bottom: 40px;
   width: 16rem;
   transform: translateX(50%);
-  @include media-breakpoint-down(sm) {
-    bottom: 30px;
-  }
+  // @include media-breakpoint-down(sm) {
+  //   bottom: 30px;
+  // }
 }
 
 .vjs-default-skin .vjs-volume-bar {
@@ -237,9 +237,9 @@
   padding: 0.1875rem 0.8125rem;
   background-color: rgba(236,236,236,.4);
   border-radius: 0.25rem;
-  @include media-breakpoint-down(sm) {
-    display: none;
-  }
+  // @include media-breakpoint-down(sm) {
+  //   display: none;
+  // }
 }
 
 .vjs-default-skin .vjs-current-time { float: left; }
@@ -258,6 +258,8 @@
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
+  background: transparent;
+  border: none;
 
   &:before {
     content: "\e611"; // PLAY icon
@@ -265,7 +267,7 @@
     font-size: 3.125rem;
   }
 
-  &:hover { cursor: pointer; }
+  &:hover { cursor: pointer; background: transparent; }
 
   &:focus { outline: 0; }
 }
@@ -276,12 +278,15 @@
     content: "\e614"; // PAUSE icon
   }
 }
-
-@include media-breakpoint-down(xs) {
-  .vjs-has-started .vjs-big-play-button {
-    top: 30%;
-  }
+.video-js:hover .vjs-big-play-button, .video-js .vjs-big-play-button:focus {
+  background: transparent;
 }
+
+// @include media-breakpoint-down(xs) {
+//   .vjs-has-started .vjs-big-play-button {
+//     top: 30%;
+//   }
+// }
 
 
 //

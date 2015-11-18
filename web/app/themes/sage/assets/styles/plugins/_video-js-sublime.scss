@@ -1,0 +1,249 @@
+// Base .video-js styles are ripped from the standard video.js theme.
+
+.video-js {
+  background-color: black;
+  padding: 0;
+  position: relative;
+  @include user-select(none);
+  vertical-align: middle;
+  .vjs-tech {
+    @include position(absolute, 0 0);
+    @include size(100%);
+  }
+  &:-moz-full-screen {
+    position: absolute;
+  }
+  &.vjs-fullscreen {
+    position: fixed;
+    overflow: hidden;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 100% !important;
+    height: 100% !important;
+  }
+  &:-webkit-full-screen {
+    width: 100% !important;
+    height: 100% !important;
+  }
+  &.vjs-fullscreen.vjs-user-inactive {
+    cursor: none;
+  }
+}
+
+body.vjs-full-window {
+  height: 100%;
+  margin: 0;
+  overflow-y: auto;
+  padding: 0;
+}
+
+.vjs-poster {
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: contain;
+  cursor: pointer;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  width: 100%;
+  img {
+    display: block;
+    margin: 0 auto;
+    max-height: 100%;
+    padding: 0;
+    width: 100%;
+  }
+  .video-js.vjs-using-native-controls & {
+    display: none;
+  }
+}
+
+.vjs-16-9 {
+    padding-top: 56.25%;
+}
+.vjs-fluid, .vjs-16-9, .vjs-4-3 {
+    width: 100%;
+    max-width: 100%;
+    height: 0;
+}
+$play-button-size: 50px;
+$control-height: 50px;
+$control-padding: 20px;
+$play-width: 15px;
+$play-height: 16px;
+$volume-width: 22px;
+$volume-height: 14px;
+$fullscreen-width: 22px;
+$fullscreen-height: 14px;
+
+.vjs-sublime-skin {
+  color: white;
+  .vjs-poster:focus, .vjs-control:focus {
+    outline: none;
+  }
+  .vjs-big-play-button {
+    line-height: $play-button-size;
+    margin: -($play-button-size / 2);
+    opacity: 1;
+    @include position(absolute, 50% 50%);
+    @include size($play-button-size);
+    @include transition(opacity 100ms $ease-in-out-quad);
+    z-index: 2;
+    &:before {
+      border-color: transparent transparent transparent white;
+      border-style: solid;
+      border-width: $play-button-size / 2 0 $play-button-size / 2 $play-button-size;
+      content: "";
+      display: block;
+      @include size(0);
+    }
+  }
+  // Hide play button when the controls are disabled, the video has started, or
+  // on mobile.
+  &.vjs-controls-disabled, &.vjs-has-started, &.vjs-using-native-controls {
+    .vjs-big-play-button {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+  .vjs-control-bar {
+    height: $control-height;
+    opacity: 0;
+    pointer-events: none;
+    @include position(absolute, 0 0 0);
+    z-index: 2;
+  }
+  // Fade the control bar in quickly when the video starts.
+  &.vjs-has-started .vjs-control-bar {
+    opacity: 1;
+    pointer-events: auto;
+    @include transition(opacity 100ms $ease-in-out-quad);
+  }
+  // Fade the control bar out slowly when the video is playing for a while.
+  &.vjs-has-started.vjs-user-inactive.vjs-playing .vjs-control-bar {
+    opacity: 0;
+    @include transition(opacity 1s $ease-in-out-quad);
+  }
+  &.vjs-has-started .vjs-poster {
+    display: none;
+  }
+  // Hide the control bar when it's not needed/wanted.
+  &.vjs-using-native-controls .vjs-control-bar,
+  &.vjs-controls-disabled .vjs-control-bar {
+    display: none;
+  }
+  .vjs-progress-control {
+    $clickable-height: 20px;
+    $visible-height: 4px;
+    @include position(absolute, 0 95px 0 50px);
+    .vjs-progress-holder {
+      cursor: pointer;
+      height: $clickable-height;
+      margin-top: -($clickable-height / 2);
+      @include position(absolute, 50% 0 0);
+      &:after {
+        background-color: rgba(white, 0.3);
+        border-radius: $visible-height / 2;
+        content: "";
+        display: block;
+        height: $visible-height;
+        margin-top: -($visible-height / 2);
+        @include position(absolute, 50% 0 0);
+      }
+    }
+    .vjs-play-progress {
+      background-color: rgba(white, 0.7);
+      border-radius: $visible-height / 2;
+      height: $visible-height;
+      margin-top: -($visible-height / 2);
+      @include position(absolute, 50% 0 0);
+    }
+  }
+  .vjs-play-control {
+    cursor: pointer;
+    margin-top: -($play-height / 2);
+    @include position(absolute, 50% $control-padding);
+    @include size($play-width $play-height);
+    &:before {
+      border-color: transparent transparent transparent white;
+      border-style: solid;
+      border-width: $play-height / 2 0 $play-height / 2 $play-width;
+      content: "";
+      display: block;
+      @include size(0);
+    }
+  }
+  &.vjs-playing .vjs-play-control {
+    &:before, &:after {
+      background-color: white;
+      border: none;
+      content: "";
+      display: block;
+      height: 100%;
+      @include position(absolute, 0 0 0);
+      width: 6px;
+    }
+    &:after {
+      left: auto;
+      right: 0;
+    }
+  }
+  .vjs-fullscreen-control {
+    border: 3px solid white;
+    box-sizing: border-box;
+    cursor: pointer;
+    margin-top: -($fullscreen-height / 2);
+    @include position(absolute, 50% $control-padding);
+    @include size($fullscreen-width $fullscreen-height);
+  }
+  &.vjs-fullscreen .vjs-fullscreen-control {
+    background: white;
+    &:after {
+      background: black;
+      content: "";
+      display: block;
+      @include position(absolute, 0 0);
+      @include size(5px);
+    }
+  }
+  .vjs-volume-control {
+    $right: $control-padding + $fullscreen-width + 13;
+    cursor: pointer;
+    margin-top: -($volume-height / 2);
+    @include position(absolute, 50% $right);
+    @include size($volume-width $volume-height);
+  }
+  .vjs-volume-bar {
+    background: url(vol-trans.png);
+    background-size: $volume-width $volume-height;
+    @include size(100%);
+  }
+  .vjs-volume-level {
+    background: url(vol-white.png);
+    background-size: $volume-width $volume-height;
+    height: 100%;
+  }
+  // Hide extra controls.
+  .vjs-current-time,
+  .vjs-time-divider,
+  .vjs-duration,
+  .vjs-remaining-time,
+  .vjs-load-progress,
+  .vjs-play-progress .vjs-control-text,
+  .vjs-play-control .vjs-control-content,
+  .vjs-fullscreen-control .vjs-control-text,
+  .vjs-slider-handle,
+  .vjs-volume-handle,
+  .vjs-live-controls,
+  .vjs-playback-rate,
+  .vjs-subtitles-button,
+  .vjs-captions-button,
+  .vjs-mute-control,
+  .vjs-hidden, {
+    display: none;
+  }
+}
