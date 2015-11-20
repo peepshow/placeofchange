@@ -31,7 +31,7 @@
     'home': {
       init: function() {
         // JavaScript to be fired on the home page
-        smoothStateInit();
+        // smoothStateInit();
       },
       finalize: function() {
         // JavaScript to be fired on the home page, after the init JS
@@ -46,7 +46,7 @@
     'landio': {
       init: function() {
         // JavaScript to be fired on the about us page
-        initLandio();
+        // initLandio();
       }
     },
     'dev_malaria_base': {
