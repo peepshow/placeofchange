@@ -1,0 +1,146 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: LC Video Embed Module\n"
+"POT-Creation-Date: 2015-08-24 21:52+0200\n"
+"PO-Revision-Date: 2015-08-24 21:52+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.4\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: lc-module-video-embed.php:54
+msgid "Video Embed"
+msgstr ""
+
+#: lc-module-video-embed.php:70
+msgid "Show On"
+msgstr ""
+
+#: lc-module-video-embed.php:76
+msgid "Desktop"
+msgstr ""
+
+#: lc-module-video-embed.php:80
+msgid "Tablet"
+msgstr ""
+
+#: lc-module-video-embed.php:84
+msgid "Phone"
+msgstr ""
+
+#: lc-module-video-embed.php:90
+msgid "Video URL"
+msgstr ""
+
+#: lc-module-video-embed.php:96
+msgid "Height"
+msgstr ""
+
+#: lc-module-video-embed.php:102
+msgid "Width"
+msgstr ""
+
+#: lc-module-video-embed.php:128
+msgid "Align"
+msgstr ""
+
+#: lc-module-video-embed.php:138
+msgid "BG Color"
+msgstr ""
+
+#: lc-module-video-embed.php:148
+msgid "BG Color - Hover"
+msgstr ""
+
+#: lc-module-video-embed.php:158
+msgid "Border Color"
+msgstr ""
+
+#: lc-module-video-embed.php:168
+msgid "Border Color - Hover"
+msgstr ""
+
+#: lc-module-video-embed.php:178
+msgid "Border Width"
+msgstr ""
+
+#: lc-module-video-embed.php:189
+msgid "Borders"
+msgstr ""
+
+#: lc-module-video-embed.php:195
+msgid "Top"
+msgstr ""
+
+#: lc-module-video-embed.php:199
+msgid "Right"
+msgstr ""
+
+#: lc-module-video-embed.php:203
+msgid "Bottom"
+msgstr ""
+
+#: lc-module-video-embed.php:207
+msgid "Left"
+msgstr ""
+
+#: lc-module-video-embed.php:217
+msgid "Border Radius"
+msgstr ""
+
+#: lc-module-video-embed.php:228
+msgid "Margin Bottom"
+msgstr ""
+
+#: lc-module-video-embed.php:239
+msgid "Minimum Height"
+msgstr ""
+
+#: lc-module-video-embed.php:253 lc-module-video-embed.php:298
+#: lc-module-video-embed.php:347
+msgid "Padding Vertical"
+msgstr ""
+
+#: lc-module-video-embed.php:264 lc-module-video-embed.php:312
+#: lc-module-video-embed.php:361
+msgid "Padding Horizontal"
+msgstr ""
+
+#: lc-module-video-embed.php:280 lc-module-video-embed.php:329
+msgid "Responsive Styling"
+msgstr ""
+
+#: lc-module-video-embed.php:286 lc-module-video-embed.php:335
+msgid "Disabled"
+msgstr ""
+
+#: lc-module-video-embed.php:290 lc-module-video-embed.php:339
+msgid "Enabled"
+msgstr ""
+
+#: lc-module-video-embed.php:295 lc-module-video-embed.php:306
+#: lc-module-video-embed.php:320
+msgid "tablet"
+msgstr ""
+
+#: lc-module-video-embed.php:344 lc-module-video-embed.php:355
+#: lc-module-video-embed.php:369
+msgid "phone"
+msgstr ""
+
+#: lc-module-video-embed.php:422
+msgid ""
+"Make sure you entered a valid URL ( ex. https://www.youtube.com/watch?"
+"v=ONHBaC-pfsk )"
+msgstr ""
+
+#: lc-module-video-embed.php:435
+msgid "A video URL needs to be set in the module options."
+msgstr ""
