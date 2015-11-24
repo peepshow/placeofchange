@@ -1,0 +1,53 @@
+/* ==========================================================================
+   Galleries
+   ========================================================================== */
+
+.gallery--grid {
+	@include cf();
+	.grid-item {
+		float: left;
+		margin: 0;
+		padding: 0;
+		img {
+			width: 100%;
+			height: auto;
+			margin: 0;
+			padding: 0 0 1px 1px;
+			line-height: 0;
+		}
+	}
+}
+.gallery--grid {
+	.grid-item {
+		width: 100%;
+		@include mq($from: mobile) {
+			@include span(1/2);
+		}
+		@include mq($from: tablet) {
+			@include span(1/4);
+		}
+	}
+}
+
+.gallery--grid-3 {
+	.grid-item {
+		@include mq($from: phablet) {
+			@include span(1/3);
+		}
+	}
+}
+
+.gallery--grid-2 {
+	.grid-item {
+		@include mq($from: phablet) {
+			@include span(1/2);
+		}
+	}
+}
+
+.gallery--grid-1 {
+	.grid-item {
+		width: 100%;
+	}
+}
+

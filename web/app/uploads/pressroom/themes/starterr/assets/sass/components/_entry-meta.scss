@@ -1,0 +1,30 @@
+/* ==========================================================================
+   ENTRY META
+   ========================================================================== */
+
+.entry-meta,
+.edition-meta	{
+	text-align: center;
+	p {
+		margin: 0;
+	}
+	&.background--dark {
+		p {
+			color: white;
+		}
+	}
+	&.background--light {
+		p {
+			color: #222;
+		}
+	}
+	&.aligned {
+		margin-bottom: 1.5238095rem;
+	}
+}
+
+.hc-content .entry-meta {
+	p {
+		color: white;
+	}
+}

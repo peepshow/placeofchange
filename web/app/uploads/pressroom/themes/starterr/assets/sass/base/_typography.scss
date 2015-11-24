@@ -1,0 +1,383 @@
+/* ==========================================================================
+   TYPOGRAPHY
+   ========================================================================== */
+
+$font-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-serif: Georgia, 'Times New Roman', serif;
+$font-mono: 'Lucida Console', Monaco, monospace;
+$text-color: #000;
+$base-vertical-unit: 4px;
+$base-line-multi: 8;
+$base-font-size: 20px;
+$paragraph-indent: true;
+$paragraph-justify: false;
+$load-typesetted: false;
+
+$ms-base: 1em;
+
+$ms-ratio: $major-second;
+$mobile-ratio: $major-second;
+
+@import "typesettings/_typesettings.scss";
+
+// $body-font-size:    19px;
+// $body-line-height:  1.618;
+// $scale-factor:      1.333;
+// $ie8compatability:  true;
+
+html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+html { 
+    font-size: 106.25%; // 17px
+	@include mq($from: mobile) {
+        font-size: 112.5%; // 18px
+	}
+    @include mq($from: phablet) {
+        font-size: 118.75%; // 19px
+    }
+    @include mq($from: tablet) {
+        font-size: 125%; // 19px
+    }
+	// @include mq($from: desktop) {
+ //        font-size: 125%; // 20px
+	// }
+	@include mq($from: wide) {
+        font-size: 131.25%; // 21px
+	}	 
+}
+
+.hentry-header--naked {
+    margin: emRhythm(32) 0;
+}
+
+.hentry-cover {
+    margin: emRhythm(4) 0;
+}
+
+.hentry-cover + .entry-content {
+        margin-top: emRhythm(10);
+    }
+
+.entry-title,
+.edition-title {
+    text-align: center;
+    margin: 0;
+}
+
+.entry-meta {
+    margin-top: emRhythm(4);
+}
+
+
+
+h1,
+.h1 { 
+	@include setType(14, ms(5));
+    @include mq($from: mobile) {
+        @include setType(16, ms(6));
+    }
+	@include mq($from: phablet) {
+		@include setType(16, ms(7));
+	}
+    @include mq($from: tablet) {
+        @include setType(18, ms(8));
+    }
+    @include mq($from: desktop) {
+        @include setType(21, ms(10));
+    }
+}
+
+h1.entry-title--emphasis,
+h1.edition-title--emphasis { 
+    @include setType(16, ms(7));
+    @include mq($from: mobile) {
+        @include setType(16, ms(8));
+    }
+    @include mq($from: phablet) {
+        @include setType(22, ms(11));
+    }
+    @include mq($from: desktop) {
+        @include setType(28, ms(13));
+    }
+}
+
+h2,
+.h2 { 
+	@include setType(12, ms(3));
+    @include mq($from: desktop) {
+        @include setType(17, ms(7));
+    }
+}
+
+h3,
+.h3 { 
+	@include setType(11, ms(2));
+    @include mq($from: desktop) {
+        @include setType(14, ms(5));
+    }
+}
+
+h4,
+.h4 {
+	@include setType(9, ms(1));
+    @include mq($from: desktop) {
+        @include setType(11, ms(3));
+    }
+}
+
+h6,
+h5  {
+	@include setType(8, ms(0));
+    @include mq($from: desktop) {
+        @include setType(8, ms(0));
+    }
+}
+
+h5 {
+    text-transform: uppercase;
+}
+
+h6 { 
+
+	font-weight: normal;
+    font-style: italic!important;
+	text-transform: capitalize;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    text-rendering: optimizeLegibility;
+}
+
+p {
+    @include setType(8, ms(0));
+    margin-top: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    -webkit-hyphens: auto;
+    -epub-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    -o-hyphens: auto;
+    hyphens: auto;
+    word-wrap: break-word;
+
+    @media (min-width: 43.75em) {
+      	@if $paragraph-justify {
+        	text-align: justify;
+      	}
+    }
+
+    &.intro {
+       @include setType(11, 1.2em); 
+    }
+
+    &.column {
+        @include mq($from: mobile) {
+            @include column-count(2);
+            @include column-fill('balance');
+            @include column-gap(2em);
+        }
+        @include mq($from: tablet) {
+            text-align: justify;
+        }
+    }
+}
+
+p,
+img,
+.entry-content-asset,
+.gallery,
+pre {
+    margin-bottom: emRhythm(6);
+    margin-top: 0;
+}
+
+figure > img {
+    margin-bottom: emRhythm(4);
+}
+
+figure.alignnone + p,
+figure.aligncenter + p {
+    margin-top: emRhythm(8);
+}
+
+blockquote {
+	margin: 0;
+	cite {
+		display: block;
+		font-style: normal;
+
+		color: $grey;
+		text-align: center;
+		&:before {
+			content: '\2014\2009';
+		}
+		&:after {
+			content: '\2009\2014';
+		}
+	}
+}
+
+blockquote > p {
+	font-style:   italic; 
+}
+
+
+ul, ol {
+    list-style-position: inside;
+    padding-left: 0;
+    @include mq($from: desktop) {
+        list-style-position: outside;
+    }
+    ol,
+    ul {
+        width: auto;
+        padding-left: 1.5em;
+    }
+}
+
+dd {
+    margin-left: 0;
+    padding-left: 1.5em;
+}
+
+p.intro {
+
+}
+
+%small {
+    @include setType(6, .8em);
+}
+
+em {
+    font-style:   italic;
+}
+
+strong,
+dt {
+    font-weight:  700;
+}
+
+em strong,
+strong em {
+    font-style:   normal;
+    font-weight:  700;
+}
+
+small,
+caption,
+.caption {
+    @extend %small;
+}
+
+caption,
+.caption {
+    color: lighten($textColor, 10);
+}
+
+abbr {
+    font-variant: normal;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+small, 
+aside,
+figcaption { 
+
+	display: block
+}
+
+
+p > small {
+	padding: 0;
+}
+
+// .main > p:empty,
+p:empty {
+	display: none
+}
+
+.main p:empty + p {
+
+}
+
+pre {
+    padding: .7em 1em;
+    background-color: #fff;
+    border: $bd;
+    border-radius: 3px;
+    font-size: .9em;
+    @include mq($from: phablet) {
+        padding: 1em 2em;
+    }
+    small,
+    p {
+        width: auto;
+        display: inline-block;
+    }
+}
+
+hr {
+    padding: 0;
+    border: none;
+    height: 0;
+    color: #E2E2E2;
+    text-align: center;
+    margin-top: emRhythm(16);
+    margin-bottom: emRhythm(16);
+    &:after {
+        content: "…";
+        display: inline-block;
+        position: relative;
+        top: -1.1em;
+        font-size: 3em;
+        padding: 0;
+    }
+}
+
+.entry-content table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    empty-cells: show;
+    border: 1px solid #cbcbcb;
+    thead {
+        background-color: #e0e0e0;
+        color: #000;
+        text-align: left;
+        vertical-align: bottom;
+    }
+    td, th {
+        border-left: 1px solid #cbcbcb;
+        border-bottom: 1px solid #cbcbcb;
+        border-width: 0 0 1px 1px;
+        font-size: inherit;
+        margin: 0;
+        overflow: visible;
+        padding: .5em 1em;
+    }
+    th {
+        text-align: left;
+        background-color: #e6e6e6;
+    }
+}
+
+.content-info .container {
+    @extend %small;
+    margin-bottom: emRhythm(8);
+}
+
+.copyright {
+    // display: block;
+    // text-align: center;
+}
+
+.org {
+    // font-weight: bold;
+}

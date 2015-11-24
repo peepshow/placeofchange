@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<theme>
+    <uniqueid>starterr</uniqueid>
+    <name>Starterr</name>
+    <date>2015-08-05</date>
+    <version>1.0.0</version>
+    <description>Starterr is PressRoom Theme boilerplate.</description>
+    <thumbnail>screenshot.png</thumbnail>
+    <website>http://press-room.io/</website>
+    <author>
+        <name>thePrintLabs</name>
+        <email>info@theprintlabs.com</email>
+    </author>
+    <layouts>
+        <item>
+            <name>basic article</name>
+            <rule>content</rule>
+            <description>default article layout</description>
+            <path>layouts/basic-article.php</path>
+        </item>
+        <item>
+            <name>cover</name>
+            <rule>content</rule>
+            <description>Cover layout</description>
+            <path>layouts/cover.php</path>
+        </item>
+        <item>
+            <name>toc</name>
+            <rule>toc</rule>
+            <description>Table of Contents theme file</description>
+            <path>layouts/toc.php</path>
+        </item>
+    </layouts>
+</theme>

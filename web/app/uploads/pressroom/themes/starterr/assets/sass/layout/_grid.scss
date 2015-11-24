@@ -1,0 +1,104 @@
+/* ==========================================================================
+   GRID
+   ========================================================================== */
+
+%wrap {
+	@include center(100%, 1rem);
+
+    @include mq($from: phablet) {
+        @include center(mq-get-breakpoint-width(tablet), 2rem);
+    }
+    @include mq($from: desktop) {
+        @include center(1140px, 1.5rem);
+        // @include center(mq-get-breakpoint-width(wide), 2rem);
+    }
+}
+
+%wide-wrap {
+    @include center(100%, 1rem);
+
+    // @include mq($from: phablet) {
+    //     @include center(100%, 2rem);
+    // }
+    @include mq($from: wide) {
+        @include center(1140px, 1rem);
+        // @include center(mq-get-breakpoint-width(wide), 2rem);
+    }
+}
+
+.wrapper {
+	@extend %wrap;
+}
+
+.wrapper--header {
+    @extend %wide-wrap;
+}
+
+
+.entry-content {
+	padding-bottom: 2rem;
+}
+
+blockquote,
+.aligned,
+.entry-content p.column,
+.entry-content-asset,
+.entry-content table {
+	@include mq($from: desktop) {
+        width: 100%;
+        // width: column-width(12/12);
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.entry-content h1,
+.entry-content h2,
+.entry-content h3,
+.entry-content h4,
+.entry-content h5,
+.entry-content h6,
+.entry-content p,
+ul,
+ol,
+dl,
+small,
+aside,
+pre,
+.content-info .container {
+    @include mq($from: tablet) {
+        // width: 61.8%;
+        width: 91%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+	@include mq($from: desktop) {
+        // width: 61.8%;
+        width: column-width(8/12);
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+ul > ol,
+ol > ul {
+    width: auto;
+}
+
+p > small {
+   width: auto; 
+}
+
+.alignnone {
+	margin-left: -1rem;
+	margin-right: -1rem;
+
+    @include mq($from: tablet) {
+        margin-left: -2rem;
+		margin-right: -2rem;
+    }
+    @include mq($from: desktop) {
+        margin-left: 0;
+		margin-right: 0;
+    }
+}

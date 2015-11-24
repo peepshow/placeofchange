@@ -1,0 +1,74 @@
+html {
+	height: 100%;
+}
+
+#toc {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+	h1 {
+		a:link, a:visited, a:hover, a:focus {
+			text-decoration: none;
+			color: inherit;
+			font-weight: inherit;
+		}
+	} 
+}
+
+.swiper-container {
+	// width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.hentry--toc {
+	background-color: #ddd; 
+	position: relative;
+	// font-size: 16px;
+	.entry-meta {
+		text-align: center;
+		color: white;
+	}
+}
+
+.hentry--toc header {
+	@include scut-center-transform;
+	width: 100%;
+    text-align: center;
+    padding: 0 1em;
+    .byline {
+    	margin-bottom: 0;
+    }
+}
+
+#toc .swiper-slide-active {
+	border-style: solid;
+	border-color: $dark-grey;
+	border-width: 0px 1px 0 0px;
+}
+
+#toc .swiper-slide-active + .swiper-slide-visible {
+	border-style: solid;
+	border-color: $dark-grey;
+	// turned off for two elements based swiper
+	// border-width: 0px 1px 0 0px;
+	border-width: 0px;
+}
+
+.hentry--toc.hc-image {
+	min-height: 100vh;
+}
+
+.entry-title--toc {
+	margin: 0;
+	
+	@include mq($until: mobile) {
+		  display: -webkit-box;
+		  -webkit-line-clamp: 2;
+		  -webkit-box-orient: vertical;
+		  overflow: hidden;
+		  text-overflow: ellipsis;  
+	}
+
+}

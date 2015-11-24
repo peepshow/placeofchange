@@ -1,0 +1,110 @@
+/* ==========================================================================
+   Image styles
+   ========================================================================== */
+
+img {
+	width: auto;
+	height: auto;
+	display: block;
+}
+
+figure {
+	padding: 0;
+	line-height: 0;
+	margin: 0;
+	img {
+		width: 100%;
+		height: auto
+	}
+	&.alignleft,
+	&.alignright {
+		margin-bottom: emRhythm(4);
+	}
+}
+
+figure .aligncenter {
+	width: 100%
+}
+
+img.aligncenter {
+	height: auto;
+}
+
+.alignnone,
+.aligncenter {
+	display: block;
+}
+
+
+figure + p {
+	display: block;
+}
+
+.entry-content-asset + p
+ {
+
+	display: block;
+}
+
+.entry-content-asset + p:empty,
+figure + p:empty {
+
+}
+
+img {
+	&.alignnone,
+	&.aligncenter,
+	&.alignright,
+	&.alignleft {
+		width: 100%;
+		margin-top: 0;
+		margin-right: 0;
+		margin-left: 0;
+	}
+}
+
+.alignnone,
+img.alignnone {
+	@include mq($from: desktop) {
+        // width: 61.8%;
+        width: column-width(12/12);
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.aligncenter,
+img.aligncenter {
+	@include mq($from: desktop) {
+        width: column-width(8/12);
+        // width: column-width(8/12);
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.alignright,
+img.alignright {
+	
+	@include mq($from: phablet) {
+		float: right;
+		margin-left: emRhythm(8);
+		margin-right: 0;
+		width: column-width(4/12);
+	}
+
+}
+
+.alignleft,
+img.alignleft {
+	@include mq($from: phablet) {
+		float: left;
+		margin-right: emRhythm(8);
+		margin-left: 0;
+		width: column-width(4/12);
+	}
+}
+
+.alignnone figcaption {
+	margin-left: 1em;
+}

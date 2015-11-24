@@ -1,0 +1,196 @@
+/* ==========================================================================
+   NORMALIZE ( IE8+ )
+   ========================================================================== */
+
+/**
+ * Correct `block` display not defined for any HTML5 element in IE 8/9.
+ * Correct `block` display not defined for `details` or `summary` in IE 10/11
+ * and Firefox.
+ * Correct `block` display not defined for `main` in IE 11.
+ */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+
+/**
+ * 1. Correct `inline-block` display not defined in IE 8/9.
+ * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+ */
+
+audio,
+canvas,
+progress,
+video {
+  display: inline-block; 
+  vertical-align: baseline; 
+}
+
+/**
+* Prevent modern browsers from displaying `audio` without controls.
+* Remove excess height in iOS 5 devices.
+*/
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+* Address `[hidden]` styling not present in IE 8/9/10.
+*/
+  
+
+[hidden] {
+    display: none;
+}
+
+/**
+ * Hide the `template` element in IE 8/9/11, Safari, and Firefox < 22.
+ */
+
+template {
+  display: none;
+}
+
+/**
+* Remove the gray background color from active links in IE 10.
+*/
+
+a {
+    background-color: transparent;
+}
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+
+a:active,
+a:hover {
+  outline: 0;
+}
+
+/**
+ * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
+ */
+
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
+ */
+
+b,
+strong {
+  font-weight: bold;
+}
+
+/**
+ * Address styling not present in Safari and Chrome.
+ */
+
+dfn {
+  font-style: italic;
+}
+
+/**
+* Address styling not present in IE 8/9.
+*/
+
+mark {
+background: #ff0;
+color: #000;
+}
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+code,
+kbd,
+pre,
+samp {
+    font-family: monospace, serif;
+    font-size: 1em;
+}
+
+
+
+/* ==========================================================================
+   GLOBAL RULES
+   ========================================================================== */
+
+*, 
+*:before, 
+*:after {
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box; 
+  box-sizing: border-box;
+}
+
+*{
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+html {
+  -ms-text-size-adjust: 100%; 
+  -webkit-text-size-adjust: 100%; 
+}
+
+body {
+  padding: 0;
+    margin: 0;
+}
+
+%line-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;  
+}
+
+a, a:link, a:hover, a:visited, img {
+  -webkit-touch-callout: none;
+}
+
+a, a:link, a:hover, a:visited {
+  text-decoration: none;
+  color: #1872B9;
+}
+
+:focus, :active {outline:none;}
+::-moz-focus-inner {border:0;}
+
+a:active,a:focus {
+  outline: none;
+}

@@ -1,0 +1,25 @@
+/* ==========================================================================
+     Logo
+     ========================================================================== */
+
+#logo {
+    margin-top: emRhythm(8);
+    margin-bottom: emRhythm(8);
+    text-align: center;
+    h1 {
+        @include setType(8, ms(1));
+        text-transform: uppercase;
+        margin: 0;
+    }
+    p {
+        @include setType(8, emCalc(16px));
+        font-style: italic;
+        margin-bottom: 0;
+    }
+    a:link,
+    a:hover,
+    a:visited {
+        color: $textColor;
+        text-decoration: none;
+    }
+}

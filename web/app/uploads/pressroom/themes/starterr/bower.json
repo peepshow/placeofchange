@@ -1,0 +1,25 @@
+{
+  "name": "pressroom starterr theme",
+  "dependencies": {
+    "modernizer": "~2.8.2",
+    "Sassifaction": "~0.0.2",
+    "sass-mq": "~3.2.2",
+    "scut": "~1.2.0",
+    "jeet": "~6.1.2",
+    "geoffgraham.animate.scss": "*",
+    "mobile-detect": "~1.2.0",
+    "fluidvids": "latest",
+    "fastclick": "~1.0.3",
+    "bourbon": "~4.2.3",
+    "typesettings": "~2.4.0",
+    "modular-scale": "~2.1.1",
+    "normalize.scss": "~3.0.2",
+    "masonry": "~3.3.1",
+    "swiper": "https://github.com/nolimits4web/Swiper.git#Swiper2"
+  },
+  "resolutions": {
+    "sass-mq": "~3.2.2",
+    "scut": "~1.2.0",
+    "textFit": "~2.2.2"
+  }
+}

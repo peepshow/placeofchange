@@ -1,0 +1,99 @@
+/* ==========================================================================
+   ARTICLE IMAGE COVER
+   ========================================================================== */
+
+.cover + .entry-content {
+	margin-top: 2rem;
+}
+
+.cover {
+	width: 100%;
+	height: 100%;
+	overflow:hidden;
+}
+
+.hc-image {
+	background-repeat: no-repeat;
+	background-size: cover;
+	// background-attachment: fixed;
+	min-height: 82vh;
+	position: relative;
+	overflow: hidden;
+}
+
+h1.entry-title--resize {
+	// line-height: 1.5em;
+	// padding: 0 2rem;
+}
+
+.hc-content {
+	@include scut-center-transform;
+	width: 100%;
+}
+
+.entry-title--toc,
+.entry-title--cover {
+	// transition: all 1s ease-in-out;
+	margin-top: 0;
+	color: white;
+}
+
+%light-svgLine {
+	background:url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMCIgeT0iMCIgdmlld0JveD0iLTIuNSA5OTcuNSA1IDUiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgLTIuNSA5OTcuNSA1IDUiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxsaW5lIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiB4MT0iLTIuNSIgeTE9IjEwMDIuNSIgeDI9IjIuNSIgeTI9Ijk5Ny41Ii8+PC9zdmc+')repeat 0 0;
+	background-size:5px;
+}
+
+%dark-svgLine {
+	background:url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMCIgeT0iMCIgdmlld0JveD0iLTIuNSA5OTcuNSA1IDUiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgLTIuNSA5OTcuNSA1IDUiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxsaW5lIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzExMSIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiB4MT0iLTIuNSIgeTE9IjEwMDIuNSIgeDI9IjIuNSIgeTI9Ijk5Ny41Ii8+PC9zdmc+')repeat 0 0;
+	background-size:5px;
+}
+
+%fullScreen {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top:0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+.hc-overlay {
+	@extend %fullScreen;
+	background-color: rgba(0, 0, 0, 0.5);
+	background-size:5px;
+}
+
+.hc-overlay--scanline {
+	transition: all 1s ease-in-out;
+	&.background--light {
+		@extend %light-svgLine;
+		background-color: rgba(255, 255, 255, 0.7);
+		opacity: .35;
+	}
+	&.background--dark {
+		@extend %dark-svgLine;
+		color: white;
+		background-color: rgba(0, 0, 0, 0.5);
+	}
+	&.background--complex {
+		@extend %dark-svgLine;
+		background-color: rgba(0, 0, 0, 0.2);
+		opacity: .35;
+	}
+}
+
+.hc-overlay--simple {
+	transition: all 1s ease-in-out;
+	@extend %fullScreen;
+	&.background--light {
+		background-color: rgba(255, 255, 255, 0.2);
+	}
+	&.background--dark {
+		color: white;
+		background-color: rgba(0, 0, 0, 0.2);
+	}
+	&.background--complex {
+		background-color: rgba(0, 0, 0, 0.2);
+	}
+}
