@@ -85,6 +85,10 @@ class DSLC_Button extends DSLC_Module {
 						'label' => __( 'New Tab', 'live-composer-page-builder' ),
 						'value' => '_blank',
 					),
+					array(
+						'label' => __( 'Lightbox', 'live-composer-page-builder' ),
+						'value' => 'lightbox',
+					),
 				)
 			),
 
@@ -339,6 +343,20 @@ class DSLC_Button extends DSLC_Module {
 				'affect_on_change_rule' => 'font-family',
 				'section' => 'styling',
 				'tab' => __( 'typography', 'live-composer-page-builder' ),
+			),
+			array(
+				'label' => __( 'Letter Spacing', 'live-composer-page-builder' ),
+				'id' => 'css_button_letter_spacing',
+				'std' => '0',
+				'type' => 'slider',
+				'refresh_on_change' => false,
+				'affect_on_change_el' => '.dslc-button a',
+				'affect_on_change_rule' => 'letter-spacing',
+				'section' => 'styling',
+				'tab' => __( 'typography', 'live-composer-page-builder' ),
+				'ext' => 'px',
+				'min' => -50,
+				'max' => 50
 			),
 
 			/**
@@ -881,16 +899,28 @@ class DSLC_Button extends DSLC_Module {
 			?>
 
 			<div class="dslc-button">
-				<a href="<?php echo do_shortcode( $options['button_url'] ); ?>" target="<?php echo $options['button_target']; ?>" <?php echo $anchor_append; ?> class="<?php echo esc_attr( $options['button_class'] ); ?>">
-					<?php if ( $options['button_state'] == 'enabled' && $options['icon_pos'] == 'left' ) : ?>
-						<span class="dslc-icon dslc-icon-<?php echo $options['button_icon_id']; ?>"></span>
-					<?php endif; ?>
-					<span class="dslca-editable-content" data-id="button_text"  data-type="simple" <?php if ( $dslc_is_admin ) echo 'contenteditable'; ?>><?php echo stripslashes( $options['button_text'] ); ?></span>
-					<?php if ( $options['button_state'] == 'enabled' && $options['icon_pos'] == 'right' ) : ?>
-						<span class="dslc-icon dslc-icon-<?php echo $options['button_icon_id']; ?>"></span>
-					<?php endif; ?>
-				</a>
-			</div><!-- .dslc-notification-box -->
+				<?php if ( $options['button_target'] == 'lightbox' ) : ?>
+					<a href="<?php echo do_shortcode( $options['button_url'] ); ?>" <?php echo $anchor_append; ?> class="dslc-lightbox-image <?php echo esc_attr( $options['button_class'] ); ?>">
+						<?php if ( $options['button_state'] == 'enabled' && $options['icon_pos'] == 'left' ) : ?>
+							<span class="dslc-icon dslc-icon-<?php echo $options['button_icon_id']; ?>"></span>
+						<?php endif; ?>
+						<span class="dslca-editable-content" data-id="button_text"  data-type="simple" <?php if ( $dslc_is_admin ) echo 'contenteditable'; ?>><?php echo stripslashes( $options['button_text'] ); ?></span>
+						<?php if ( $options['button_state'] == 'enabled' && $options['icon_pos'] == 'right' ) : ?>
+							<span class="dslc-icon dslc-icon-<?php echo $options['button_icon_id']; ?>"></span>
+						<?php endif; ?>
+					</a>
+				<?php else : ?>
+					<a href="<?php echo do_shortcode( $options['button_url'] ); ?>" target="<?php echo $options['button_target']; ?>" <?php echo $anchor_append; ?> class="<?php echo esc_attr( $options['button_class'] ); ?>">
+						<?php if ( $options['button_state'] == 'enabled' && $options['icon_pos'] == 'left' ) : ?>
+							<span class="dslc-icon dslc-icon-<?php echo $options['button_icon_id']; ?>"></span>
+						<?php endif; ?>
+						<span class="dslca-editable-content" data-id="button_text"  data-type="simple" <?php if ( $dslc_is_admin ) echo 'contenteditable'; ?>><?php echo stripslashes( $options['button_text'] ); ?></span>
+						<?php if ( $options['button_state'] == 'enabled' && $options['icon_pos'] == 'right' ) : ?>
+							<span class="dslc-icon dslc-icon-<?php echo $options['button_icon_id']; ?>"></span>
+						<?php endif; ?>
+					</a>
+				<?php endif; ?>
+			</div><!-- .dslc-button -->
 
 			<?php
 

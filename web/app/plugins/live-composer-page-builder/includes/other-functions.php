@@ -205,8 +205,30 @@ if ( ! function_exists('dslc_aq_resize') ) {
 	 *               Array contains 0 = URL, 1 = width, 2 = height
 	 */
 	function dslc_aq_resize( $url, $width = null, $height = null, $crop = null, $single = true, $upscale = false ) {
-		$aq_resize = DSLC_Aq_Resize::getInstance();
-		return $aq_resize->process( $url, $width, $height, $crop, $single, $upscale );
+
+		 if( class_exists( 'Jetpack' ) && Jetpack::is_module_active( 'photon' ) ) {
+
+			$args = array(
+				'resize' => "$width,$height"
+			);
+			if ( $single == true ) {
+				return jetpack_photon_url( $url, $args );
+			} else {
+				$image = array (
+					0 => $img_url,
+					1 => $width,
+					2 => $height
+				);
+				return jetpack_photon_url( $url, $args );
+			}
+
+		} else {
+
+			$aq_resize = DSLC_Aq_Resize::getInstance();
+			return $aq_resize->process( $url, $width, $height, $crop, $single, $upscale );
+			
+		}
+
 	}
 
 }
@@ -223,9 +245,9 @@ if ( ! function_exists('dslc_aq_resize') ) {
 function dslc_get_social_count( $post_ID = false, $refresh_in = 3600 ) {
 
 	// If ID nt supplied use current
-	if ( $post_ID = false ) {
+	if ( $post_ID == false ) {
 		$post_ID = get_the_ID();
-	}
+	}	
 
 	// Transient
 	$transient_id = 'dslc_social_shares_count_' . $post_ID;

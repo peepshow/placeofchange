@@ -135,8 +135,20 @@ function dslc_init_accordion() {
 
 function dslc_init_lightbox() {
 
+	var type;
+
 	jQuery( '.dslc-lightbox-image' ).each(function(){
-		jQuery(this).magnificPopup({ type:'image' });
+
+		// Default type
+		type = 'image';
+
+		// Check if video
+		if ( jQuery(this).attr('href').indexOf('youtube.com') >= 0 || jQuery(this).attr('href').indexOf('vimeo.com') >= 0 ) {
+			type = 'iframe';
+		}
+
+		jQuery(this).magnificPopup({ type: type });
+
 	});
 
 	jQuery( '.dslc-lightbox-gallery' ).each(function(){
@@ -1028,12 +1040,47 @@ jQuery(document).ready(function($){
 	 * Notification Close
 	 */
 
+	$('.dslc-notification-box-has-timeout').each(function(){
+
+		var nBox = $(this);
+		nTimeout = 'none',
+		moduleID = nBox.closest('.dslc-module-front').data('module-id'),
+		cookieID = 'nBox' + moduleID;
+
+		// Check timeout
+		if ( nBox.data('notification-timeout') ) {
+
+			if ( Cookies.get(cookieID) == undefined ) {
+				nBox.show();
+			}
+
+		}
+	});
+
 	$(document).on( 'click', '.dslc-notification-box-close', function() {
-		$(this).closest('.dslc-notification-box').animate({
+
+		var nBox = $(this).closest('.dslc-notification-box'),
+		nTimeout = 'none',
+		moduleID = nBox.closest('.dslc-module-front').data('module-id'),
+		cookieID = 'nBox' + moduleID;
+
+		// Check timeout
+		if ( nBox.data('notification-timeout') ) {
+			nTimeout = nBox.data('notification-timeout');
+		}
+
+		// Set cookie if timeout exists
+		if ( nTimeout !== 'none' ) {
+			Cookies.set( cookieID, 'closed', { expires: nTimeout } );
+		}
+
+		// Close with animation
+		nBox.animate({
 			opacity : 0
 		}, 400, function(){
 			$(this).remove();
 		});
+
 	});
 
 	/**
@@ -1156,9 +1203,18 @@ jQuery(document).ready(function($){
 		e.preventDefault();
 
 		if ( jQuery(this).closest('.dslc-post').length ) {
+
 			jQuery(this).closest('.dslc-post').find('.dslc-lightbox-gallery a:first-child').trigger('click');
+
+		} else if ( jQuery(this).closest('.dslc-col') ) {
+
+			var imageIndex = jQuery(this).closest('.dslc-col').index();
+			jQuery(this).closest('.dslc-module-front').find('.dslc-lightbox-gallery a:eq(' + imageIndex + ')').trigger('click');
+
 		} else {
+
 			jQuery(this).closest('.dslc-module-front').find('.dslc-lightbox-gallery a:first-child').trigger('click');
+			
 		}
 
 	});

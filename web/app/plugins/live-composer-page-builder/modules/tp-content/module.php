@@ -2689,6 +2689,28 @@ class DSLC_TP_Content extends DSLC_Module {
 				'section' => 'styling',
 				'tab' => __( 'buttons', 'live-composer-page-builder' ),
 			),
+			array(
+				'label' => __( 'Box Shadow', 'live-composer-page-builder' ),
+				'id' => 'css_button_box_shadow',
+				'std' => '',
+				'type' => 'box_shadow',
+				'refresh_on_change' => false,
+				'affect_on_change_el' => 'input[type=submit], button',
+				'affect_on_change_rule' => 'box-shadow',
+				'section' => 'styling',
+				'tab' => __( 'buttons', 'live-composer-page-builder' ),
+			),
+			array(
+				'label' => __( 'Box Shadow - Hover', 'live-composer-page-builder' ),
+				'id' => 'css_button_box_shadow_hover',
+				'std' => '',
+				'type' => 'box_shadow',
+				'refresh_on_change' => false,
+				'affect_on_change_el' => 'input[type=submit]:hover, button:hover',
+				'affect_on_change_rule' => 'box-shadow',
+				'section' => 'styling',
+				'tab' => __( 'buttons', 'live-composer-page-builder' ),
+			),
 
 			/**
 			 * Blockquote
@@ -3022,7 +3044,7 @@ class DSLC_TP_Content extends DSLC_Module {
 				'std' => 'left',
 				'type' => 'text_align',
 				'refresh_on_change' => false,
-				'affect_on_change_el' => 'blockquote',
+				'affect_on_change_el' => 'blockquote, .dslc-tp-content blockquote p',
 				'affect_on_change_rule' => 'text-align',
 				'section' => 'styling',
 				'tab' => __( 'blockquote', 'live-composer-page-builder' ),
